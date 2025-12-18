@@ -15,53 +15,65 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            background-color: #f9f9f9;
-            font-family: Arial, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
             margin: 0;
+            background-color: #f4f6f8;
+            font-family: "Segoe UI", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
         }
 
         .login-container {
-            text-align: center;
             background: #ffffff;
-            padding: 24px 20px;
-            border-radius: 12px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             width: 100%;
-            max-width: 360px;
+            max-width: 380px;
+            padding: 28px 24px 32px;
+            border-radius: 14px;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
             box-sizing: border-box;
         }
 
         .icon {
-            width: 140px;
-            max-width: 80%;
-            margin-bottom: 24px;
+            width: 120px;
+            margin-bottom: 28px;
         }
 
         .login-button {
-            background-color: #0078d4;
-            color: #ffffff;
-            padding: 16px;
+            width: 100%;
+            padding: 15px;
             font-size: 16px;
+            font-weight: 600;
             border: none;
             border-radius: 8px;
             cursor: pointer;
-            display: block;
-            width: 100%;
-            margin: 12px 0;
+            margin-bottom: 14px;
+            transition: background-color 0.2s ease;
+        }
+
+        .login-button.user {
+            background-color: #0078d4;
+            color: #ffffff;
+        }
+
+        .login-button.user:hover {
+            background-color: #0063b1;
         }
 
         .login-button.admin {
-            background-color: #555555;
+            background-color: #2f5597; /* グレーではなく濃いブルー */
+            color: #ffffff;
         }
 
-        .login-button:hover {
-            opacity: 0.9;
+        .login-button.admin:hover {
+            background-color: #24457a;
         }
 
         /* スマホ最適化 */
         @media screen and (max-width: 480px) {
             .login-container {
-                padding: 20px 16px;
+                padding: 24px 18px 28px;
+            }
+
+            .icon {
+                width: 110px;
             }
 
             .login-button {
@@ -73,13 +85,13 @@
 <body>
 
     <div class="login-container">
-        <img src="スクリーンショット 2025-04-26 192623.png" alt="icon" class="icon">
+        <img src="スクリーンショット 2025-04-26 192623.png" alt="C4th Logo" class="icon">
 
-        <button type="button" id="userLoginButton" class="login-button">
+        <button id="userLoginButton" class="login-button user">
             通常共通ログイン画面はこちら
         </button>
 
-        <button type="button" id="adminLoginButton" class="login-button admin">
+        <button id="adminLoginButton" class="login-button admin">
             管理者共通ログイン画面はこちら
         </button>
     </div>
